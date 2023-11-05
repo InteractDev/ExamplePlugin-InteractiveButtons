@@ -12,11 +12,12 @@ namespace ExamplePluginInteractiveButton
 {
     public class EventHandlers
     {
-        Pickup p;
         public void OnRoundStart()
         {
-            InteractiveButtons.API.Features.Create.CreateInteractiveButton(ItemType.Coin, Exiled.API.Enums.RoomType.EzGateA, 1, 2f, true, new Vector3(0, 1, 0), new Vector3(1, 1, 1), Quaternion.Euler(0, 0, 0));
-            InteractiveButtons.API.Features.Create.CreateInteractiveButton(ItemType.KeycardScientist, Exiled.API.Enums.RoomType.EzGateB, "One", 5f, false, new Vector3(0, 2, 0), new Vector3(2, 2, 2), Quaternion.Euler(90, 0, 0));
+            // CreateInteractiveButton(PickupItemType, SpawnRoom, ButtonId, ItemPickupTime = 1f, PickupHasGravity = true, PickupCanCollideWithOtherItems = true, ItemSpawnOffset = Vector3.zero, ItemScale = Vector3.one, ItemRotation = Quaternion.Euler(0, 0, 0))
+            InteractiveButtons.API.Features.Create.CreateInteractiveButton(ItemType.Coin, Exiled.API.Enums.RoomType.EzGateA, 1, 2f, false, true, new Vector3(0, 1, 0), new Vector3(2, 2, 2), Quaternion.Euler(0, 0, 0));
+            // CreateInteractiveButton(PickupItemType, SpawnRoom, ButtonTextId, ItemPickupTime = 1f, PickupHasGravity = true, PickupCanCollideWithOtherItems = true, ItemSpawnOffset = Vector3.zero, ItemScale = Vector3.one, ItemRotation = Quaternion.Euler(0, 0, 0))
+            InteractiveButtons.API.Features.Create.CreateInteractiveButton(ItemType.KeycardScientist, Exiled.API.Enums.RoomType.EzGateB, "One", 5f, false, false, new Vector3(0, 2, 0), new Vector3(3, 3, 3), Quaternion.Euler(90, 0, 0));       
         }
 
         public void ButtonInteracted(ButtonInteractedEventArgs ev)
